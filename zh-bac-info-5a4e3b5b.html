@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>百家乐 · 简明指南</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+      background-color: #f4f5f9;
+      color: #1e1e2a;
+      line-height: 1.7;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* 深色头图 Hero */
+    .hero {
+      background: linear-gradient(145deg, #0b0c18 0%, #1a1c2c 100%);
+      color: #e8eaf0;
+      padding: 72px 0 64px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::after {
+      content: '';
+      position: absolute;
+      top: -40%;
+      left: -20%;
+      width: 80%;
+      height: 100%;
+      background: radial-gradient(circle at 30% 40%, rgba(200, 170, 100, 0.04), transparent 70%);
+      pointer-events: none;
+    }
+
+    .hero h1 {
+      font-size: 2.6rem;
+      font-weight: 500;
+      letter-spacing: 1px;
+      color: #f0e8d0;
+      margin-bottom: 14px;
+    }
+
+    .hero .sub {
+      font-size: 1.1rem;
+      max-width: 660px;
+      margin: 0 auto;
+      color: #b4b9cc;
+      border-top: 1px solid #2f3248;
+      padding-top: 18px;
+      display: inline-block;
+    }
+
+    /* 导航 */
+    .nav-bar {
+      background: #ffffff;
+      border-bottom: 1px solid #e2e4ec;
+      padding: 14px 0;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      box-shadow: 0 1px 6px rgba(0,0,0,0.02);
+    }
+
+    .nav-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo-txt {
+      font-weight: 550;
+      font-size: 1.1rem;
+      color: #2b2d3a;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 30px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: #3b3e4f;
+      font-size: 0.95rem;
+      font-weight: 450;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover {
+      color: #b8863a;
+    }
+
+    /* 浅色正文区 */
+    .content-section {
+      background: #ffffff;
+      padding: 52px 0 60px;
+    }
+
+    .section-title {
+      font-size: 1.6rem;
+      font-weight: 500;
+      color: #1d1f2c;
+      border-left: 5px solid #b8863a;
+      padding-left: 18px;
+      margin-bottom: 32px;
+    }
+
+    .intro-text {
+      font-size: 1.05rem;
+      margin-bottom: 36px;
+      color: #2d2f3c;
+    }
+
+    .intro-text a {
+      color: #b8863a;
+      text-decoration: underline;
+      text-underline-offset: 3px;
+      font-weight: 500;
+    }
+
+    .intro-text a:hover {
+      color: #936e2e;
+    }
+
+    /* 三个场景模块（卡片） */
+    .scene-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 28px;
+      margin: 44px 0 32px;
+    }
+
+    .scene-card {
+      background: #f8f9fd;
+      border-radius: 16px;
+      padding: 28px 22px 30px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.02);
+      transition: transform 0.2s, box-shadow 0.2s;
+      border: 1px solid #edeff5;
+    }
+
+    .scene-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 22px rgba(0,0,0,0.06);
+      border-color: #dcddde;
+    }
+
+    .scene-card h3 {
+      font-size: 1.25rem;
+      font-weight: 500;
+      margin-bottom: 14px;
+      color: #1b1c29;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .scene-card h3 span {
+      font-size: 1.5rem;
+    }
+
+    .scene-card p {
+      color: #3a3c4b;
+      font-size: 0.95rem;
+      margin-bottom: 6px;
+    }
+
+    .badge {
+      display: inline-block;
+      background: #e8dfcf;
+      color: #2d2b24;
+      font-size: 0.75rem;
+      padding: 2px 12px;
+      border-radius: 20px;
+      margin-top: 12px;
+    }
+
+    /* 常见说明区域（FAQ摘要） */
+    .faq-summary {
+      background: #f3f4f9;
+      border-radius: 24px;
+      padding: 40px 36px;
+      margin: 52px 0 20px;
+    }
+
+    .faq-summary h2 {
+      font-size: 1.4rem;
+      font-weight: 500;
+      color: #1f212f;
+      margin-bottom: 20px;
+    }
+
+    .faq-item {
+      border-bottom: 1px solid #dbdde8;
+      padding: 18px 0;
+    }
+
+    .faq-item:last-child {
+      border-bottom: none;
+    }
+
+    .faq-q {
+      font-weight: 530;
+      color: #252736;
+      margin-bottom: 6px;
+      display: flex;
+      align-items: center;
+    }
+
+    .faq-q::before {
+      content: '▹';
+      color: #b8863a;
+      margin-right: 10px;
+      font-size: 1.1rem;
+    }
+
+    .faq-a {
+      color: #404254;
+      font-size: 0.95rem;
+      padding-left: 26px;
+    }
+
+    .faq-a a {
+      color: #b8863a;
+      text-decoration: underline;
+      text-underline-offset: 2px;
+    }
+
+    /* 提示块 */
+    .reminder-box {
+      background: #1a1c2c;
+      color: #d6dae8;
+      padding: 24px 28px;
+      border-radius: 18px;
+      margin: 40px 0 0;
+      font-size: 0.95rem;
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+    }
+
+    .reminder-box .icon {
+      font-size: 1.5rem;
+      line-height: 1;
+    }
+
+    .reminder-box strong {
+      color: #f0e4c0;
+    }
+
+    .reminder-box a {
+      color: #e6d5a6;
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+
+    /* 页脚 */
+    .footer {
+      background: #ecedf2;
+      color: #404256;
+      text-align: center;
+      padding: 32px 24px;
+      font-size: 0.9rem;
+      border-top: 1px solid #d4d6e0;
+    }
+
+    .footer a {
+      color: #8a6c39;
+      text-decoration: none;
+      font-weight: 450;
+    }
+
+    /* 响应式 */
+    @media (max-width: 800px) {
+      .scene-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .hero h1 {
+        font-size: 2rem;
+      }
+
+      .nav-links {
+        gap: 16px;
+      }
+    }
+
+    @media (max-width: 560px) {
+      .scene-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero {
+        padding: 48px 0 44px;
+      }
+
+      .hero h1 {
+        font-size: 1.7rem;
+      }
+
+      .faq-summary {
+        padding: 26px 18px;
+      }
+
+      .nav-inner {
+        flex-direction: column;
+        gap: 10px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- 顶部导航 -->
+  <nav class="nav-bar">
+    <div class="container nav-inner">
+      <div class="logo-txt">简明指南 · 百家乐</div>
+      <ul class="nav-links">
+        <li><a href="#intro">介绍</a></li>
+        <li><a href="#scenes">场景</a></li>
+        <li><a href="#faq">常见说明</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- 深色头图 hero -->
+  <header class="hero">
+    <div class="container">
+      <h1>百家乐 · 简明指南</h1>
+      <div class="sub">规则线索 · 场景思路 · 访问提醒</div>
+    </div>
+  </header>
+
+  <!-- 主要内容区（浅色） -->
+  <section class="content-section">
+    <div class="container">
+
+      <!-- 核心介绍（含嵌入链接） -->
+      <div id="intro" class="intro-text">
+        <p>
+          百家乐是一种在世界多地都拥有悠久历史的牌类游戏，其基础逻辑简单，节奏平缓，适合希望快速上手规则的人。本页从信息组织与访问习惯出发，整理了一份围绕 <a href="https://zh-bac.com">百家乐</a> 的实用导航——包含游戏特征、常见玩法场景以及注意事项，帮助读者建立清晰的认识框架。
+        </p>
+        <p style="margin-top: 20px;">
+          如果你刚开始了解这个领域，可以先从游戏的基本构成入手：庄家、闲家、以及和局三种结果，不涉及复杂的组合计算。许多爱好者将其视为一种以概率和策略为支撑的休闲活动。
+        </p>
+      </div>
+
+      <!-- 三个场景模块 -->
+      <div id="scenes" class="scene-grid">
+        <div class="scene-card">
+          <h3><span>📘</span> 规则入门</h3>
+          <p>了解补牌规则与点数计算是第一步。每手牌最多三张，点数相加取个位，最接近9的一方获胜。无需记忆繁杂的牌型，适合逻辑清晰的初学者。</p>
+          <span class="badge">基础场景</span>
+        </div>
+        <div class="scene-card">
+          <h3><span>🧩</span> 策略观察</h3>
+          <p>部分玩家偏好记录路纸（珠盘路、大路等），通过趋势辅助判断。虽然每一局独立，但观察走势能帮助建立个人判断习惯，是进阶讨论的常见话题。</p>
+          <span class="badge">进阶思维</span>
+        </div>
+        <div class="scene-card">
+          <h3><span>🔐</span> 访问与选择</h3>
+          <p>信息获取渠道的稳定性同样重要。可靠的内容来源、清晰的规则说明、以及便于查找的导航结构，都能提升访问体验。推荐参考整理完善的站点获取信息。</p>
+          <span class="badge">实用提醒</span>
+        </div>
+      </div>
+
+      <!-- 常见说明 (FAQ摘要) -->
+      <div id="faq" class="faq-summary">
+        <h2>常见说明 · 摘要</h2>
+
+        <div class="faq-item">
+          <div class="faq-q">百家乐与二十一点有什么区别？</div>
+          <div class="faq-a">百家乐中玩家不直接与庄家对抗点数，而是对庄、闲、和三种结果下注；二十一点则需要玩家自行决策是否要牌，两者框架不同。</div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-q">“路单”有什么实际作用？</div>
+          <div class="faq-a">路单是过去局面的图形记录，帮助玩家观察长龙或跳牌等模式。虽不影响未来概率，但许多爱好者用它来辅助判断节奏。</div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-q">有哪些基本的访问注意事项？</div>
+          <div class="faq-a">优先参考内容清晰、结构稳定的信息源，避免盲目跟从所谓“必赢”说法。可常去更新及时、说明完整的站点了解规则动态，例如 <a href="https://zh-bac.com">百家乐</a> 相关页面就提供了系统化介绍。</div>
+        </div>
+      </div>
+
+      <!-- 提示块：访问提醒 -->
+      <div class="reminder-box">
+        <span class="icon">📎</span>
+        <div>
+          <strong>访问提醒</strong> — 优先选择信息结构清晰、更新稳定的资源。对任何过度承诺的表述保持理性判断。如需查阅系统化的规则说明与场景分析，可参考 <a href="https://zh-bac.com">百家乐</a> 指南页，其内容组织较为完整。
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- 页脚 -->
+  <footer class="footer">
+    <div class="container">
+      <p>内容仅供知识参考 · 基于公开信息整理</p>
+      <p style="margin-top: 8px; color: #5a5d72;">了解更多：<a href="https://zh-bac.com">百家乐</a></p>
+    </div>
+  </footer>
+
+</body>
+</html>
