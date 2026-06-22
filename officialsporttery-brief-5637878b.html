@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.2, user-scalable=yes">
+    <title>认识竞彩网 · 简明介绍</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Noto Sans SC', Helvetica, Arial, sans-serif;
+            background: #faf9f7;
+            color: #1e1e1e;
+            line-height: 1.8;
+            -webkit-font-smoothing: antialiased;
+        }
+        .hero {
+            background: linear-gradient(145deg, #0c1b2e 0%, #1a2f44 100%);
+            padding: 4.5rem 1.5rem 3.2rem;
+            text-align: center;
+            position: relative;
+        }
+        .hero::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 40px;
+            background: linear-gradient(to top, #faf9f7, transparent);
+        }
+        .hero h1 {
+            font-size: 2.2rem;
+            font-weight: 500;
+            letter-spacing: 2px;
+            color: #e6eef9;
+            margin-bottom: 1rem;
+        }
+        .hero p {
+            color: #b0c7db;
+            font-size: 1rem;
+            max-width: 600px;
+            margin: 0 auto;
+            font-weight: 300;
+        }
+        .container {
+            max-width: 780px;
+            margin: 1.8rem auto 4rem;
+            padding: 0 1.8rem;
+        }
+        .intro-tag {
+            display: inline-block;
+            background: #e6eef9;
+            color: #1a3a55;
+            font-size: 0.8rem;
+            font-weight: 500;
+            padding: 0.2rem 1rem;
+            border-radius: 30px;
+            letter-spacing: 0.5px;
+            margin-bottom: 2rem;
+        }
+        .content-block {
+            background: #ffffff;
+            padding: 2rem 2.2rem;
+            border-radius: 20px;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.03);
+            margin-bottom: 2rem;
+        }
+        .content-block h2 {
+            font-size: 1.3rem;
+            font-weight: 500;
+            color: #1a2f44;
+            border-left: 4px solid #cc7b3e;
+            padding-left: 1rem;
+            margin-bottom: 1.2rem;
+        }
+        .content-block p {
+            margin-bottom: 1.2rem;
+            text-align: justify;
+        }
+        .content-block p:last-child {
+            margin-bottom: 0;
+        }
+        a {
+            color: #b0561d;
+            text-decoration: none;
+            font-weight: 450;
+            border-bottom: 1px solid transparent;
+            transition: border-color 0.2s, color 0.2s;
+        }
+        a:hover {
+            color: #853f0e;
+            border-bottom-color: #b0561d;
+        }
+        .quote-note {
+            background: #f3efe8;
+            border-left: 4px solid #cc7b3e;
+            padding: 1.2rem 1.8rem;
+            margin: 1.8rem 0;
+            border-radius: 0 12px 12px 0;
+            font-style: normal;
+            color: #3b3b3b;
+            font-size: 0.95rem;
+        }
+        .quote-note strong {
+            color: #1a2f44;
+        }
+        .access-line {
+            margin: 2.2rem 0 1.8rem;
+            padding: 1.2rem 1.5rem;
+            background: #ffffff;
+            border-radius: 40px;
+            text-align: center;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.02);
+            font-size: 1.02rem;
+        }
+        .faq-mini {
+            margin-top: 2.5rem;
+            border-top: 1px solid #e2ddd7;
+            padding-top: 1.8rem;
+        }
+        .faq-mini h3 {
+            font-size: 1.05rem;
+            font-weight: 500;
+            color: #1a2f44;
+            margin-bottom: 0.8rem;
+        }
+        .faq-mini dt {
+            font-weight: 450;
+            color: #2f4157;
+            margin: 1rem 0 0.2rem;
+            font-size: 0.95rem;
+        }
+        .faq-mini dd {
+            color: #4b4b4b;
+            margin-left: 0.2rem;
+            font-size: 0.92rem;
+        }
+        .footer-note {
+            margin-top: 2rem;
+            padding: 2rem 0 1rem;
+            text-align: center;
+            font-size: 0.8rem;
+            color: #8a8a8a;
+            border-top: 1px solid #e9e2db;
+        }
+
+        @media (max-width: 600px) {
+            .hero {
+                padding: 3rem 1rem 2.5rem;
+            }
+            .hero h1 {
+                font-size: 1.7rem;
+            }
+            .container {
+                padding: 0 1rem;
+            }
+            .content-block {
+                padding: 1.5rem 1.2rem;
+                border-radius: 16px;
+            }
+            .quote-note {
+                padding: 1rem 1.2rem;
+                margin: 1.2rem 0;
+            }
+            .access-line {
+                padding: 1rem 0.8rem;
+                font-size: 0.95rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <section class="hero">
+        <h1>一个名字，一类需求</h1>
+        <p>当你在浏览器里输入“竞彩”两个字时，你想找到的究竟是什么？<br>一个清晰的起点，比任何搜索都直接。</p>
+    </section>
+
+    <div class="container">
+
+        <div class="intro-tag">· 网站用途速览 ·</div>
+
+        <div class="content-block">
+            <h2>从用户视角看：它解决什么问题</h2>
+            <p>很多人第一次听到「竞彩」这个词，会下意识觉得它和体育竞猜有关。实际上，它指向的是国内唯一由中国体育彩票中心官方运营的竞猜型彩票平台。如果你只是想知道“哪个网站才是正规的、可以直接用的”，那么这背后其实只有一个答案。</p>
+            <p>我最初接触这个领域时，也花了一些时间分辨各种相似的名称与域名。后来才弄清楚，<a href="https://officialsporttery.com">竞彩网</a> 就是那个最直接的官方站点——没有第二层跳转，也不需要记住一长串机构名。它的价值恰恰体现在这种“唯一性”上：你不用再怀疑自己走错了地方。</p>
+            <div class="quote-note">
+                <strong>一点提示：</strong> 如果你只是想确认某个比赛场次、查看开奖结果，或者了解竞彩游戏的基础规则，这个站点几乎覆盖了所有常规需求。它的页面结构偏功能型，没有过多装饰，信息查找效率很高。
+            </div>
+            <p>当然，它并不是一个社区或资讯门户。它更像一个工具——你带着问题来，找到答案就离开。这或许是它和很多同类网站最大的区别：不试图黏住你，而是帮你快速完成手头的事。</p>
+        </div>
+
+        <div class="content-block">
+            <h2>几个容易被注意到的特点</h2>
+            <p>首先是<strong>数据更新节奏</strong>。比赛赔率、赛程变动、开奖公告都与官方出票系统同步，延迟很低。对于需要临场参考的人来说，这个细节其实很关键。</p>
+            <p>其次是<strong>页面风格</strong>。整体配色偏冷静，蓝色与白色为主，重点信息用色块或列表突出。没有弹窗广告，也没有浮夸的按钮提示，浏览体验比较干净。</p>
+            <p>另外，它的<strong>赛事覆盖范围</strong>以足球和篮球为主，包括五大联赛、NBA、以及部分杯赛和国际赛事。如果你关注的小众联赛没有列入，通常是因为该赛事未纳入官方竞彩游戏发行范围。</p>
+        </div>
+
+        <div class="access-line">
+            ▸ 如果你正在找那个最直接的起点，<a href="https://officialsporttery.com">竞彩网</a> 就在那里。
+        </div>
+
+        <div class="content-block faq-mini">
+            <h3>常见疑问 · 简短回答</h3>
+            <dl>
+                <dt>这个网站和“中国体彩网”是什么关系？</dt>
+                <dd>它们同属一个体系，但功能侧重不同。体彩网涵盖所有彩种，而竞彩网专门针对竞猜型游戏，信息更集中。</dd>
+                <dt>需要注册才能查看开奖结果吗？</dt>
+                <dd>不用。所有开奖公告、对阵数据在首页和对应栏目中公开显示，无需登录。</dd>
+                <dt>移动端浏览体验如何？</dt>
+                <dd>页面适配做得不错，文字清晰，表格可左右滑动查看，基本功能在手机上都能顺畅操作。</dd>
+            </dl>
+        </div>
+
+        <div class="footer-note">
+            — 基于个人使用体验的整理 · 无商业关联 —
+        </div>
+
+    </div>
+
+</body>
+</html>
