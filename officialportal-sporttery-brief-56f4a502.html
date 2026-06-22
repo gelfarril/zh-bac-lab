@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>竞彩网 · 杂志专题</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            background: #f2f2f2;
+            font-family: "PingFang SC", "Microsoft YaHei", system-ui, -apple-system, sans-serif;
+            color: #2c2c2c;
+            line-height: 1.65;
+            padding: 2rem 1.5rem;
+        }
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: #ffffff;
+            border-radius: 28px;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.03), 0 2px 6px rgba(0,0,0,0.02);
+            overflow: hidden;
+            border: 1px solid #e8e8e8;
+            padding: 2.2rem 2.5rem 3rem;
+        }
+
+        /* hero 横幅 — 杂志开篇 */
+        .hero {
+            margin: -2.2rem -2.5rem 2rem;
+            padding: 3.8rem 2.5rem 3.2rem;
+            background: linear-gradient(145deg, #fafafa 0%, #ececec 100%);
+            border-bottom: 1px solid #dadada;
+            position: relative;
+        }
+        .hero::after {
+            content: "✦ 专题";
+            position: absolute;
+            top: 1rem;
+            right: 2rem;
+            font-size: 0.75rem;
+            letter-spacing: 2px;
+            color: #8a8a8a;
+            background: rgba(255,255,255,0.5);
+            padding: 0.25rem 1rem;
+            border-radius: 40px;
+            border: 1px solid #d0d0d0;
+        }
+        .hero h1 {
+            font-size: 2.5rem;
+            font-weight: 500;
+            letter-spacing: 2px;
+            color: #1d1d1d;
+            margin-bottom: 0.5rem;
+            line-height: 1.2;
+        }
+        .hero .sub {
+            font-size: 1.05rem;
+            color: #5a5a5a;
+            max-width: 600px;
+            border-left: 3px solid #b0b0b0;
+            padding-left: 1rem;
+            font-weight: 350;
+        }
+
+        /* 通用卡片样式 */
+        .card {
+            background: #f9f9f9;
+            border-radius: 20px;
+            padding: 1.8rem 2rem;
+            margin: 2rem 0 1.8rem;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.02);
+            border: 1px solid #eaeaea;
+            transition: box-shadow 0.2s;
+        }
+        .card:hover {
+            box-shadow: 0 4px 14px rgba(0,0,0,0.04);
+        }
+        .card h2 {
+            font-size: 1.5rem;
+            font-weight: 450;
+            color: #222;
+            margin-bottom: 0.8rem;
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+        }
+        .card h2 small {
+            font-size: 0.9rem;
+            font-weight: 350;
+            color: #888;
+            margin-left: 0.3rem;
+        }
+        .card p {
+            margin-bottom: 0.9rem;
+            color: #3b3b3b;
+        }
+        .card p:last-child {
+            margin-bottom: 0;
+        }
+
+        /* 两栏布局 (特点/场景) */
+        .grid-2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+        .grid-item {
+            background: #f9f9f9;
+            border-radius: 20px;
+            padding: 1.6rem 1.8rem;
+            border: 1px solid #eaeaea;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.01);
+        }
+        .grid-item h3 {
+            font-weight: 480;
+            font-size: 1.2rem;
+            color: #1f1f1f;
+            margin-bottom: 0.6rem;
+            border-bottom: 1px dashed #d4d4d4;
+            padding-bottom: 0.4rem;
+        }
+        .grid-item p {
+            font-size: 0.95rem;
+            color: #424242;
+            margin-bottom: 0.4rem;
+        }
+
+        /* FAQ 摘要 */
+        .faq-box {
+            background: #f4f4f4;
+            border-radius: 18px;
+            padding: 1.4rem 1.8rem;
+            margin: 1.8rem 0 1.2rem;
+            border: 1px solid #dfdfdf;
+        }
+        .faq-box h3 {
+            font-size: 1.1rem;
+            font-weight: 450;
+            margin-bottom: 0.6rem;
+            color: #2a2a2a;
+        }
+        .faq-box .q-item {
+            display: flex;
+            gap: 0.6rem;
+            padding: 0.35rem 0;
+            border-bottom: 1px solid #e2e2e2;
+        }
+        .faq-box .q-item:last-child {
+            border-bottom: none;
+        }
+        .faq-box .q-icon {
+            color: #7a7a7a;
+            font-weight: 300;
+        }
+        .faq-box .q-text {
+            color: #3e3e3e;
+            font-size: 0.96rem;
+        }
+
+        /* 页尾访问提示 */
+        .footer-note {
+            margin-top: 2.8rem;
+            padding-top: 1.8rem;
+            border-top: 1px solid #e0e0e0;
+            text-align: center;
+            font-size: 0.95rem;
+            color: #5c5c5c;
+        }
+        .footer-note a {
+            color: #2d2d2d;
+            text-decoration: none;
+            font-weight: 450;
+            border-bottom: 1px dotted #a0a0a0;
+            transition: border 0.15s;
+        }
+        .footer-note a:hover {
+            border-bottom: 2px solid #1f1f1f;
+        }
+
+        /* 响应式 */
+        @media (max-width: 700px) {
+            body { padding: 1rem 0.8rem; }
+            .container { padding: 1.5rem 1.2rem 2rem; }
+            .hero { margin: -1.5rem -1.2rem 1.5rem; padding: 2.8rem 1.5rem 2.2rem; }
+            .hero h1 { font-size: 2rem; }
+            .card { padding: 1.3rem 1.2rem; }
+            .grid-2 { grid-template-columns: 1fr; gap: 1rem; }
+            .grid-item { padding: 1.2rem; }
+            .faq-box { padding: 1rem 1.2rem; }
+            .hero::after { top: 0.8rem; right: 1rem; }
+        }
+        @media (max-width: 480px) {
+            .hero h1 { font-size: 1.7rem; }
+            .card h2 { font-size: 1.3rem; }
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+
+    <!-- hero 杂志横幅 -->
+    <div class="hero">
+        <h1>竞彩 · 在场</h1>
+        <div class="sub">不是每一次选择都要计算赔率，但每一次理解都让观察更清晰</div>
+    </div>
+
+    <!-- 三段自然介绍：背景说明 + 两段延伸 -->
+    <div class="card">
+        <h2>一场关于节奏的对话 <small>· 背景</small></h2>
+        <p>竞技体育里，时间被切割成回合、小节、半场与加时。而在另一个层面上，人们用更安静的节奏去感受——数据是语言，趋势是段落，赛前分析是序言。<a href="https://officialportal-sporttery.com">竞彩网</a>的存在，像是为这种节奏提供了一本平实的笔记：记录、对照、推敲，然后回归到比赛本身的呼吸里。</p>
+        <p>没有哪一种观看方式更高级，但多一个角度，画面就更立体。这本杂志式的页面，想聊的正是这种“在场感”——不是作为赌徒，而是作为对竞技有好奇心的人。</p>
+    </div>
+
+    <div class="card">
+        <h2>信息、直觉、颗粒度 <small>· 三个切面</small></h2>
+        <p>看球的人都有过这样的瞬间：教练换人、阵型微调、核心球员移动路线变化——这些细节叠加，才构成一场完整的叙事。竞彩网提供的信息，本质上是把这些颗粒度更小的变化提炼出来，让普通观众也能看到那些经常被镜头忽略的层次。</p>
+        <p>同时，它也尊重直觉。经验丰富的爱好者往往能嗅到冷门的气息，或者在平淡的表象下嗅到转折。真实的数据与个人的判断之间，不存在谁取代谁，而是互相照见。这是专题取名为“在场”的原因之一。</p>
+    </div>
+
+    <!-- 两栏：特点 + 场景 (差异化结构) -->
+    <div class="grid-2">
+        <div class="grid-item">
+            <h3>✓ 结构清晰</h3>
+            <p>赛事列表、指数变动、趋势概览以模块化方式呈现，没有冗余干扰。你可以快速定位自己关注的联赛或杯赛，也方便做横向比较。</p>
+            <p style="margin-top: 0.6rem;">每个模块都保持适度的留白，信息密度被刻意控制，避免视觉疲劳。</p>
+        </div>
+        <div class="grid-item">
+            <h3>✓ 场景适配</h3>
+            <p>无论是赛前做功课的傍晚，还是赛后复盘、整理思路的深夜，页面布局都保持一致的从容。移动端与桌面端的过渡经过专门调整。</p>
+            <p style="margin-top: 0.6rem;">没有闪烁的弹窗或紧迫的倒计时，留给用户自己掌控节奏。</p>
+        </div>
+    </div>
+
+    <!-- FAQ 摘要 (轻量) -->
+    <div class="faq-box">
+        <h3>❖ 常见想法</h3>
+        <div class="q-item">
+            <span class="q-icon">·</span>
+            <span class="q-text">如何看待数据与看球体验的关系？——数据是辅助，但比赛的魅力常在数据无法量化的瞬间。</span>
+        </div>
+        <div class="q-item">
+            <span class="q-icon">·</span>
+            <span class="q-text">竞彩网适合哪些人？——对竞技本身有好奇心、希望更系统了解赛事动态的爱好者。</span>
+        </div>
+        <div class="q-item">
+            <span class="q-icon">·</span>
+            <span class="q-text">是否需要付费或注册才能浏览基础信息？——页面上的主要模块均免费开放，无需绑定。</span>
+        </div>
+    </div>
+
+    <!-- 页尾访问提示 (自然嵌入链接) -->
+    <div class="footer-note">
+        <p>如果你对竞技数据的颗粒度与叙事感有兴趣，不妨花五分钟逛逛 <a href="https://officialportal-sporttery.com">竞彩网</a>。它不会替你决定如何观看一场比赛，但可能会让你注意到那些原本擦肩而过的细节。</p>
+        <p style="margin-top: 1rem; font-size: 0.85rem; color: #8a8a8a;">—— 杂志专题 · 温和叙述 · 2025 ——</p>
+    </div>
+
+</div>
+</body>
+</html>
